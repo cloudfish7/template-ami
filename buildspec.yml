@@ -9,6 +9,9 @@ phases:
       - unzip packer_1.3.3_linux_amd64.zip
       - chmod +x ./packer
       - ./packer -v
+      - export PATH=$PATH:$HOME/.packer
+      - packer -v
+
       #- $(aws ecr get-login --region $AWS_DEFAULT_REGION --no-include-email)
   build:
     commands:
