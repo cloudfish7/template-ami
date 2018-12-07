@@ -9,13 +9,14 @@ phases:
       - unzip packer_1.3.3_linux_amd64.zip
       - chmod +x ./packer
       - ./packer -v
-      - export PATH=$PATH:$HOME/.packer
-      - packer -v
+        #      - export PATH=$PATH:$HOME/.packer
+        #      - packer -v
 
       #- $(aws ecr get-login --region $AWS_DEFAULT_REGION --no-include-email)
   build:
     commands:
       - echo Build started on `date`
+      - ./packer build ami.json
         #      - echo Building the Docker image...
         #      - docker build -t $IMAGE_REPO_NAME:$IMAGE_TAG -t $IMAGE_REPO_NAME:`cat version` .
         #      - docker tag $IMAGE_REPO_NAME:$IMAGE_TAG $AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/$IMAGE_REPO_NAME:$IMAGE_TAG
