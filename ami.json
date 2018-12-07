@@ -1,6 +1,6 @@
 {
   "builders": [{
-    "type": "amazonebs",
+    "type": "amazon-ebs",
     "region": "ap-northeast-1",
     "source_ami": "ami-8e8847f1",
     "instance_type": "t2.micro",
